@@ -26,7 +26,6 @@ RUN a2ensite  default-ssl.conf
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
 ADD 000-default.conf  /etc/apache2/sites-available/000-default.conf
 ADD apachesupervisor.conf /etc/supervisor/conf.d/apachesupervisor.conf
-ADD .htaccess /var/www/html/.htaccess
 
 # Download Wordpress from git into /opt
 RUN  git clone  https://github.com/pramod08/Wordpress.git  /opt
