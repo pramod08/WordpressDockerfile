@@ -36,7 +36,7 @@ ADD wp-config.php /opt/wp-config.php
 # Modify permissions to allow plugin upload
 RUN cp -R /opt/* /var/www/html/
 RUN chown -R www-data:www-data  /var/www/html
-RUN chown -R root:root  /var/www/html/.htaccess
+
 
 RUN chmod -R 755 /var/www/html/
 ADD run.sh /run.sh
