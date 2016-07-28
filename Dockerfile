@@ -26,7 +26,7 @@ RUN a2ensite  default-ssl.conf
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
 ADD 000-default.conf  /etc/apache2/sites-available/000-default.conf
 ADD apachesupervisor.conf /etc/supervisor/conf.d/apachesupervisor.conf
-ADD .htaccess /var/www/html/.htaccess
+
 
 # Download Wordpress from git into /opt
 RUN  git clone  https://github.com/pramod08/Wordpress.git  /opt
@@ -37,7 +37,7 @@ ADD wp-config.php /opt/wp-config.php
 # Modify permissions to allow plugin upload
 RUN cp -R /opt/* /var/www/html/
 RUN chown -R www-data:www-data  /var/www/html
-RUN chown -R root:root  /var/www/html/.htaccess
+
 
 RUN chmod -R 755 /var/www/html/
 ADD run.sh /run.sh
